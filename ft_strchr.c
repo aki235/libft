@@ -7,7 +7,10 @@ char	*ft_strchr(char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if 
-		i++;
+		if (s[i] == c)
+			return (&s[i]);
+		else
+			i++;
 	}
+	return (NULL);
 }
