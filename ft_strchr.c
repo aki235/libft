@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -9,8 +9,9 @@ char	*ft_strchr(char *s, int c)
 	{
 		if (s[i] == c)
 			return (&s[i]);
-		else
-			i++;
+		i++;
 	}
+	if (s[i] == c)
+		return (&s[i]);
 	return (NULL);
 }
