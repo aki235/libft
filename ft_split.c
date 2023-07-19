@@ -16,49 +16,88 @@ int how_many_c(char const *s, char c)
     return (res + 2);
 }
 
-char    **ft_split(char const *s, char c)
+char    **ft_malloc_res(char const *s, char c)
 {
     char    **res;
-    int     start;
-    int     end;
-    int     i;
 
-    res = (char**)malloc(sizeof(char*) * how_many_c(s, c));
+    res = (char **)malloc(sizeof(char *) * how_many_c(s, c));
     if (!res)
         return (NULL);
-    end = 0;
-    i = 0;
-    while (1)
-    {
-        while (s[start] == c && s[start] != '\0')
-            start++;
-        end = start;
-        while (s[end] != c && s[start] != '\0')
-            end++;
-        res[i] = ft_substr(s, start, end - start);
-        i++;
-        if (end == ft_strlen(s))
-            break;
-    }
-    res[i] = 0;
     return (res);
 }
 
+void    *ft_split_free(char **res)
+{
+    char    **res2;
 
+    res2 = res;
+    while (*res)
+    {
+        free(*res);
+        res++;
+    }
+    free(res2);
+    return (NULL);
+}
+
+char    **ft_split0(char const *s, char c, char **res)
+{
+    char    **res2;
+    int     start;
+    int     end;
+
+    res2 = res;
+    end = 0;
+    while (1)
+    {
+        start = end;
+        while (s[start] == c && s[start] != '\0')
+            start++;
+        end = start;
+        while (s[end] != c && s[end] != '\0')
+            end++;
+        if (end == ft_strlen(s))
+            break;
+        *res2 = ft_substr(s, start, end - start);
+        if (!(*res2))
+            return (ft_split_free(res));
+        res2++;
+    }
+    res2++;
+    *res2 = 0;
+    return (res);
+}
+
+char    **ft_split(char const *s, char c)
+{
+    char    **split;
+
+    split = ft_malloc_res(s, c);
+    if (!split)
+        return (NULL);
+    split = ft_split0(s, c, split);
+    if (!split)
+        return (NULL);
+    return (split);
+}
+
+/*
 int main(void)
 {
     char **split;
-    char const *s = "abcxxpqrx123";
+    char **f;
+    char const *s = "xabxxpqrx34xx";
+    //char const *s = "xxxx";
     char c  = 'x';
     
     split = ft_split(s, c);
-    /*
-    printf("hello");
-    for (int i = 0; split[i]; i++)
+    f = split;
+    while (*split)
     {
-        printf("%s\n", split[i]);
+        printf("%s\n", *split);
+        split++;
     }
-    */
-   printf("%d", how_many_c(s, c));
-   //printf("%s", ft_substr(s, 1, 3));
+
+    ft_split_free(f);
 }
+*/
