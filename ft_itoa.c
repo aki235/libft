@@ -36,6 +36,8 @@ char    *ft_itoa_p(int n)
     char    *str2;
 
     str = (char *)malloc(sizeof(char) * (ft_intlen(n) + 1));
+    if (!str)
+        return (NULL);
     str2 = str;
     while (n >= 10)
     {
@@ -56,6 +58,8 @@ char    *ft_itoa_n(int n)
     char    *str2;
 
     str = (char *)malloc(sizeof(char) * (ft_intlen(n) + 2));
+    if (!str)
+        return (NULL);
     *str = '-';
     str++;
     str2 = str;
