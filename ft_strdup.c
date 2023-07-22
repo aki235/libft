@@ -6,6 +6,7 @@ char  *strdup(const char *s)
   int   i;
   
   ret = (char *)malloc(sizeof(char) * ft_strlen(s));
+  i = 0;
   while (s[i] != '\0')
   {
     ret[i] = s[i];
