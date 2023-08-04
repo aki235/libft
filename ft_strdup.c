@@ -9,8 +9,8 @@ char	*strdup(const char *s)
 	i = 0;
 	while (s[i] != '\0')
 	{
-	ret[i] = s[i];
-	i++;
+		ret[i] = s[i];
+		i++;
 	}
 	ret[i] = '\0';
 	return (ret);

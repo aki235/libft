@@ -2,8 +2,8 @@
 
 int	how_many_c(char const *s, char c)
 {
-	int res;
-	int i;
+	int	res;
+	int	i;
 
 	res = 0;
 	i = 0;
@@ -57,7 +57,7 @@ char	**ft_split0(char const *s, char c, char **res)
 		while (s[end] != c && s[end] != '\0')
 			end++;
 		if (end == ft_strlen(s))
-			break;
+			break ;
 		*res2 = ft_substr(s, start, end - start);
 		if (!(*res2))
 			return (ft_split_free(res));
