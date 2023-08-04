@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int how_many_c(char const *s, char c)
+int	how_many_c(char const *s, char c)
 {
 	int res;
 	int i;
