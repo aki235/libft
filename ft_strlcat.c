@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t ft_strlcat (char *dst, char *src, size_t size)
+size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
 	int	i;
 	int	j;
@@ -18,5 +18,5 @@ size_t ft_strlcat (char *dst, char *src, size_t size)
 		}
 		dst[i] = "\0";
 	}
-	return (i);//reigai
+	return (i);
 }

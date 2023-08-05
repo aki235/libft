@@ -8,16 +8,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	j = 0;
-	ret = (char*)malloc(sizeof(char) * (len + 1));
+	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (j >= len)
-			break;
+			break ;
 		ret[j] = s[i];
 		i++;
-	j++;
+		j++;
 	}
 	ret[j] = '\0';
 	return (ret);
