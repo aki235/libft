@@ -10,7 +10,11 @@ NAME	= libft.a
 all:	 	$(NAME)
 $(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
-clean:		
+clean:
 	$(RM) $(OBJS)
 fclean:		clean
 	$(RM) $(NAME)
+
+
+#作りたいもの: 材料
+#	作り方
