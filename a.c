@@ -5,17 +5,8 @@
 
 int main(void)
 {
-	char s[20] = "xaaaaxaaaaxxax";
-	char c = 'x';
-
-	/*
-	int i = 0;
-	while (s[i])
-	{
-		printf("%c: %p\n", s[i], &s[i]);
-		i++;
-	}
-	*/
-	printf("ans: %p\n", strrchr(s, c));
-	printf("ft : %p\n", ft_strrchr(s, c));
+	char buf1[20] = "abcdefg";
+	char buf2[20] = "abcdefg";
+	printf("%d\n", ft_memcmp(buf1, buf2, 10));
+	printf("%d")
 }
