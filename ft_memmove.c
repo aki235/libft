@@ -26,3 +26,8 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 	}
 	return (dst);
 }
+
+void	*ft_memmove(void *buf1, const void *buf2, size_t n)
+{
+	
+}
