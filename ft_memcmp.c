@@ -17,13 +17,14 @@ int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (((char *)buf1)[i] && ((char *)buf2)[i] && i < n)
+	while (((unsigned char *)buf1)[i] && ((unsigned char *)buf2)[i] && i < n)
 	{
-		if (((char *)buf1)[i] == ((char *)buf2)[i])
-			return (((char *)buf1)[i] - ((char *)buf2)[i]);
+		if (((unsigned char *)buf1)[i] == ((unsigned char *)buf2)[i])
+			return (((unsigned char *)buf1)[i] - ((unsigned char *)buf2)[i]);
 		i++;
 	}
 	if (i < n)
-		return (((char *)buf1)[i] - ((char *)buf2)[i]);
+		return (((unsigned char *)buf1)[i] - ((unsigned char *)buf2)[i]);
 	return (0);
 }
+//返り値が違う

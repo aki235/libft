@@ -6,7 +6,8 @@
 int main(void)
 {
 	char buf1[20] = "abcdefg";
-	char buf2[20] = "abcdefg";
-	printf("%d\n", ft_memcmp(buf1, buf2, 10));
-	printf("%d")
+	char buf2[20] = "abcdefi";
+	size_t n = 20;
+	printf("%d\n", memcmp(buf1, buf2, n));
+	printf("%d\n", ft_memcmp(buf1, buf2, n));
 }
