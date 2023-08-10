@@ -5,7 +5,10 @@
 
 int main(void)
 {
-	char str[20] = "";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
+	int *p;
+	*p = 123;
+	printf("%d", p);
+	*(p + 1) = 456;
+	//memset(p, 0, 4);
+	//printf("%d", *p);
 }
