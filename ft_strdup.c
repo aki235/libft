@@ -12,14 +12,18 @@
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*ret;
-	int		i;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
 	ret = (char *)malloc(sizeof(char) * ft_strlen(s));
+	if (!ret)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		ret[i] = s[i];
 		i++;
@@ -27,3 +31,14 @@ char	*strdup(const char *s)
 	ret[i] = '\0';
 	return (ret);
 }
+/*
+int	main(void)
+{
+	char	*s1;
+	char	*s2;
+
+	s1 = "abcd";
+	s2 = ft_strdup(s1);
+	printf("%s", s2);
+}
+*/

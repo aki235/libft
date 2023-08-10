@@ -63,19 +63,18 @@ char	**ft_split0(char const *s, char c, char **res)
 	while (1)
 	{
 		start = end;
-		while (s[start] == c && s[start] != '\0')
+		while (s[start] == c && s[start])
 			start++;
-		end = start;
-		while (s[end] != c && s[end] != '\0')
-			end++;
-		if (end == ft_strlen(s))
+		if (!s[start])
 			break ;
+		end = start;
+		while (s[end] != c && s[end])
+			end++;
 		*res2 = ft_substr(s, start, end - start);
 		if (!(*res2))
 			return (ft_split_free(res));
 		res2++;
 	}
-	res2++;
 	*res2 = 0;
 	return (res);
 }
@@ -92,7 +91,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (split);
 }
-
 /*
 int main(void)
 {

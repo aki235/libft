@@ -33,20 +33,31 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*trim;
 
-	trim = (char *)malloc(sizeof(char));
-	if (trim == NULL)
-		return (0);
+	if (!s1 || !set)
+		return (NULL);
+	trim = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!trim)
+		return (NULL);
 	start = 0;
-	while (s1[start] != '\0' && ft_inchar(s1[start], set))
+	while (s1[start] && ft_inchar(s1[start], (char *)set))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && ft_inchar(s1[end - 1], set))
+	while (end > start && ft_inchar(s1[end - 1], (char *)set))
 		end--;
 	i = start;
 	while (i < end)
 	{
-		trim[i - start] = s1[i];
+		trim[i - start] = (char)(s1[i]);
 		i++;
 	}
+	trim[i - start] = '\0';
 	return (trim);
 }
+/*
+int	main(void)
+{
+	char	s1[20] = "ab2ba2bb";
+	char	s2[20] = "ab";
+	printf("%s", ft_strtrim(s1, s2));
+}
+*/
