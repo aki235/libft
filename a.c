@@ -4,14 +4,10 @@
 
 int	main(void)
 {
-	const char s1[20] = "xxabcxxbcxxaaa";
-	char c = 'x';
+	int		i;
+	char	*s;
 
-	char **s;
-	s = ft_split(s1, c);
-	
-	for (int i = 0; s[i]; i++)
-	{
-		printf("%s\n", s[i]);
-	}
+	i = -99999;
+	s = ft_itoa(i);
+	printf("%s", s);
 }

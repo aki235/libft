@@ -99,7 +99,6 @@ char	*ft_itoa(int n)
 	else
 		return (ft_itoa_n(n * (-1)));
 }
-
 /*
 int main(void)
 {
