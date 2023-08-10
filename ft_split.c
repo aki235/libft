@@ -92,22 +92,17 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 /*
-int main(void)
+int	main(void)
 {
-    char **split;
-    char **f;
-    char const *s = "xabxxpqrx34xx";
-    //char const *s = "xxxx";
-    char c  = 'x';
-    
-    split = ft_split(s, c);
-    f = split;
-    while (*split)
-    {
-        printf("%s\n", *split);
-        split++;
-    }
+	const char s1[20] = "xxabcxxbcxxaaa";
+	char c = 'x';
 
-    ft_split_free(f);
+	char **s;
+	s = ft_split(s1, c);
+	
+	for (int i = 0; s[i]; i++)
+	{
+		printf("%s\n", s[i]);
+	}
 }
 */
