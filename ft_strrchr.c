@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	if (!s)
 		return (NULL);
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == c)
@@ -27,3 +27,19 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	const char	*s;
+	int			c;
+
+	s = "1230456-abc";
+	c = '\0';
+	for (int i; s[i]; i++)
+	{
+		printf("%d %p\n", i, &(s[i]));
+	}
+	printf("%p\n", ft_strrchr(s, c));
+	printf("%p\n", strrchr(s, c));
+}
+*/

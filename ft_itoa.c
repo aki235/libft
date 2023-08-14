@@ -91,9 +91,6 @@ char	*ft_itoa_n(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
-
 	if (n >= 0)
 		return (ft_itoa_p(n));
 	else

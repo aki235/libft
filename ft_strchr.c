@@ -29,3 +29,19 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)(s + i));
 	return (NULL);
 }
+/*
+int main(void)
+{
+	const char	*s;
+	int			c;
+
+	s = "1230456";
+	c = 'l' + 256;
+	for (int i; s[i]; i++)
+	{
+		printf("%d %p\n", i, &(s[i]));
+	}
+	printf("%p\n", ft_strchr(s, c));
+	printf("%p\n", strchr(s, c));
+}
+*/

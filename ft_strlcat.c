@@ -19,6 +19,32 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_size;
 
 	dst_size = ft_strlen(dst);
+	i = dst_size;
+	if (i < (size - 1) && size > 0)
+	{
+		j = 0;
+		while (src[j] != '\0' && i < (size - 1))
+		{
+			dst[i] = src[j];
+			i++;
+			j++;
+		}
+		dst[i] = '\0';
+	}
+	if (size < dst_size)
+		return (size + ft_strlen(src));
+	return (dst_size + ft_strlen(src));
+}
+
+
+/*
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+	size_t	dst_size;
+
+	dst_size = ft_strlen(dst);
 	i = 0;
 	while (dst[i] != '\0')
 		i++;
@@ -37,17 +63,34 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + ft_strlen(src));
 	return (dst_size + ft_strlen(src));
 }
+*/
+
 /*
 int main(void)
 {
-	for (size_t i = 0; i < 15; i++)
+	char *src1 = calloc(100, sizeof(char));
+	char *src2 = calloc(100, sizeof(char));
+	for (int i = 0; i < 99; i++)
 	{
-		char	src[] = "123456789";
-		char	dst[20] = "ABC";
-		printf("%zu: %s  %lu /////", i, dst, strlcat(dst, src, i));
-		const char	src1[] = "123456789";
-		char	dst1[20] = "ABC";
-		printf("%zu: %s  %lu\n", i, dst1, ft_strlcat(dst1, src1, i));
+		src1[i] = i + 1;
+		src2[i] = i + 1;
 	}
+	char *dst1 = calloc(100, sizeof(char));
+	char *dst2 = calloc(100, sizeof(char));
+
+	printf("%lu\n", strlcat(dst1, src1, 10));
+	printf("%zu\n", ft_strlcat(dst2, src2, 10));
+	int state = 0;
+	for (int i = 0; dst1[i] && dst2[i]; i++)
+	{
+		if (dst1[i] != dst2[i])
+		{
+			printf("%d %c %c\n", i, dst1[i], dst2[i]);
+			state = 1;
+			break ;
+		}
+	}
+	printf("state; %d\n", state);
 }
+
 */
