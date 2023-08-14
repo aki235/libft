@@ -91,10 +91,14 @@ char	*ft_itoa_n(int n)
 
 char	*ft_itoa(int n)
 {
+	char	*str_intmin;
+
+	str_intmin = "-2147483648";
 	if (n >= 0)
 		return (ft_itoa_p(n));
-	else
-		return (ft_itoa_n(n * (-1)));
+	if (n == -2147483648)
+		return (str_intmin);
+	return (ft_itoa_n(n * (-1)));
 }
 /*
 int main(void)

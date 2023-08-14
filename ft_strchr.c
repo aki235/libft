@@ -21,11 +21,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char)c)
 		return ((char *)(s + i));
 	return (NULL);
 }
@@ -35,7 +35,7 @@ int main(void)
 	const char	*s;
 	int			c;
 
-	s = "1230456";
+	s = "libft-test-tokyo";
 	c = 'l' + 256;
 	for (int i; s[i]; i++)
 	{

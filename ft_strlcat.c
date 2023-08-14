@@ -14,57 +14,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
 	size_t	dst_size;
+	size_t	src_size;
+	size_t	i;
 
 	dst_size = ft_strlen(dst);
-	i = dst_size;
-	if (i < (size - 1) && size > 0)
-	{
-		j = 0;
-		while (src[j] != '\0' && i < (size - 1))
-		{
-			dst[i] = src[j];
-			i++;
-			j++;
-		}
-		dst[i] = '\0';
-	}
-	if (size < dst_size)
-		return (size + ft_strlen(src));
-	return (dst_size + ft_strlen(src));
-}
-
-
-/*
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t	i;
-	size_t	j;
-	size_t	dst_size;
-
-	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
 	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	if (i < (size - 1) && size > 0)
+	if (dst_size <= size - 1 && size > 0)
 	{
-		j = 0;
-		while (src[j] != '\0' && i < (size - 1))
+		while (src[i] && i + dst_size < size - 1)
 		{
-			dst[i] = src[j];
+			dst[i + dst_size] = src[i];
 			i++;
-			j++;
 		}
-		dst[i] = '\0';
+		dst[i + dst_size] = '\0';
+		return (dst_size + src_size);
 	}
-	if (size < dst_size)
-		return (size + ft_strlen(src));
-	return (dst_size + ft_strlen(src));
+	return (size + src_size);
 }
-*/
-
 /*
 int main(void)
 {
@@ -92,5 +60,4 @@ int main(void)
 	}
 	printf("state; %d\n", state);
 }
-
 */
