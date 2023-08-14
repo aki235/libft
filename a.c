@@ -4,10 +4,8 @@
 
 int	main(void)
 {
-	int		i;
-	char	*s;
+	char *s;
 
-	i = -99999;
-	s = ft_itoa(i);
-	printf("%s", s);
+	s = "abcde";
+	ft_putstr_fd(s, 1);
 }
