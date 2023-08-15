@@ -18,8 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_size;
 	size_t	i;
 
-	dst_size = ft_strlen(dst);
 	src_size = ft_strlen(src);
+	if (!dst)
+		return (src_size);
+	dst_size = ft_strlen(dst);
 	i = 0;
 	if (dst_size <= size - 1 && size > 0)
 	{
@@ -36,28 +38,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 int main(void)
 {
-	char *src1 = calloc(100, sizeof(char));
-	char *src2 = calloc(100, sizeof(char));
+	char	*src1 = calloc(100, sizeof(char));
+	char	*src2 = calloc(100, sizeof(char));
 	for (int i = 0; i < 99; i++)
 	{
 		src1[i] = i + 1;
 		src2[i] = i + 1;
 	}
-	char *dst1 = calloc(100, sizeof(char));
-	char *dst2 = calloc(100, sizeof(char));
-
-	printf("%lu\n", strlcat(dst1, src1, 10));
-	printf("%zu\n", ft_strlcat(dst2, src2, 10));
-	int state = 0;
-	for (int i = 0; dst1[i] && dst2[i]; i++)
-	{
-		if (dst1[i] != dst2[i])
-		{
-			printf("%d %c %c\n", i, dst1[i], dst2[i]);
-			state = 1;
-			break ;
-		}
-	}
-	printf("state; %d\n", state);
+	printf("ft: %zu\n", ft_strlcat(NULL, src1, 0));
+	printf("origin: %lu\n", strlcat(NULL, src2, 0));
 }
 */

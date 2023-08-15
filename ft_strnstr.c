@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!little || ft_strlen(little) == 0)
+	if (!big || ft_strlen(little) == 0)
 		return ((char *)big);
 	i = 0;
 	j = 0;
@@ -36,15 +36,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int main(void)
 {
-	char s1[20] = "abc1xyz11xy";
-	char s2[20] = "1xy";
-	size_t n = 20;
 
-	for (int i = 0; i < strlen(s1); i++)
-		printf("s1: %p\n", &s1[i]);
-	for (int i = 0; i < strlen(s2); i++)
-		printf("s2: %p\n", &s2[i]);
-
-	printf("%p\n", strnstr(s1, s2, n));
-	printf("%p\n", ft_strnstr(s1, s2, n));
-}*/
+}
+*/
