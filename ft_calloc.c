@@ -34,13 +34,16 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 /*
+#include <limits.h>
 int	main(void)
 {
 	size_t	a;
 	size_t	b;
-	
-	a = (size_t)SIZE_MAX / 10 + (size_t)1;
-	b = (size_t)10;
+
+	a = SIZE_MAX;
+	b = SIZE_MAX;
+	printf("%p\n", ft_calloc(a, b));
+	printf("%p\n", calloc(a, b));
 	printf("%zu", a * b);
 }
 */

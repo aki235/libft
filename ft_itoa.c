@@ -11,6 +11,39 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+int	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	else
+		return (nbr);
+}
+
+void	ft_strrev(char *str)
+{
+	int		i;
+	char	tmp;
+	int		l;
+
+	i = 0;
+	l = ft_strlen(str);
+	while (i < l / 2)
+	{
+		tmp = str[i];
+		str[i] = str[l - 1 - i];
+		str[l - 1 - i] = tmp;
+		i++;
+	}
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		is_neg;
+	size_t	len;
+}
+*/
 
 int	ft_intlen(int n)
 {
@@ -100,6 +133,7 @@ char	*ft_itoa(int n)
 		return (str_intmin);
 	return (ft_itoa_n(n * (-1)));
 }
+
 /*
 int main(void)
 {
