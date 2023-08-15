@@ -24,5 +24,7 @@ fclean:		clean
 	
 re:			fclean all
 
+.PHONY:		all clean fclean re
+
 #作りたいもの: 材料
 #	作り方
