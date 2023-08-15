@@ -106,7 +106,7 @@ int main(void)
     int     i;
     char    *s;
 
-    i = -9999900;
+    i = -2147483648;
     s = ft_itoa(i);
     printf("%s", s);
 }
