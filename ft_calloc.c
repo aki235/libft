@@ -40,8 +40,9 @@ int	main(void)
 	size_t	a;
 	size_t	b;
 
-	a = SIZE_MAX;
-	b = SIZE_MAX;
+	a = INT_MIN;
+	b = INT_MIN;
+	printf("%zu", (size_t)-1);
 	printf("%p\n", ft_calloc(a, b));
 	printf("%p\n", calloc(a, b));
 	printf("%zu", a * b);
