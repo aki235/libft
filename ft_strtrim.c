@@ -35,15 +35,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	trim = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!trim)
-		return (NULL);
 	start = 0;
 	while (s1[start] && ft_inchar(s1[start], (char *)set))
 		start++;
 	end = ft_strlen(s1);
 	while (end > start && ft_inchar(s1[end - 1], (char *)set))
 		end--;
+	trim = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!trim)
+		return (NULL);
 	i = start;
 	while (i < end)
 	{
