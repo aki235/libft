@@ -12,6 +12,21 @@
 
 #include "libft.h"
 
+size_t	ft_strnlen(const char *s, size_t maxlen)
+{
+	size_t	len;
+
+	len = 0;
+	while (len < maxlen)
+	{
+		if (!(*s))
+			break;
+		len++;
+		s++;
+	}
+	return (len);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_size;
@@ -19,9 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	src_size = ft_strlen(src);
-	if (!dst)
-		return (src_size);
-	dst_size = ft_strlen(dst);
+	dst_size = ft_strnlen(dst, size);
 	i = 0;
 	if (dst_size <= size - 1 && size > 0)
 	{
@@ -38,14 +51,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*
 int main(void)
 {
-	char	*src1 = calloc(100, sizeof(char));
-	char	*src2 = calloc(100, sizeof(char));
-	for (int i = 0; i < 99; i++)
-	{
-		src1[i] = i + 1;
-		src2[i] = i + 1;
-	}
-	printf("ft: %zu\n", ft_strlcat(NULL, src1, 0));
-	printf("origin: %lu\n", strlcat(NULL, src2, 0));
+	char src[5] = "abc";
+	char dst[20] = "123";
+
+	printf("%zu\n", ft_strlcat(NULL, src, 0));
+	//printf("%s", dst);
 }
 */

@@ -16,8 +16,6 @@ void	*ft_memset(void *buf, int ch, size_t n)
 {
 	size_t	i;
 
-	if (!buf)
-		return (NULL);
 	i = 0;
 	while (i < n)
 	{
@@ -26,3 +24,10 @@ void	*ft_memset(void *buf, int ch, size_t n)
 	}
 	return (buf);
 }
+/*
+int	main(void)
+{
+	memset(NULL, 'a', 5);
+	ft_memset(NULL, 'a', 5);
+}
+*/
