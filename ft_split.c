@@ -75,7 +75,7 @@ char	**ft_split0(char const *s, char c, char **res)
 			return (ft_split_free(res));
 		res2++;
 	}
-	*res2 = 0;
+	*res2 = NULL;
 	return (res);
 }
 
