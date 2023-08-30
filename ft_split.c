@@ -18,14 +18,16 @@ int	how_many_c(char const *s, char c)
 	size_t	i;
 
 	res = 0;
-	i = 0;
-	while (s[i])
+	if (s[0] != c)
+		res++;
+	i = 1;
+	while (s[i - 1] && s[i])
 	{
-		if (s[i] == c)
+		if (s[i - 1] == c && s[i] != c)
 			res++;
 		i++;
 	}
-	return (res + 2);
+	return (res + 1);
 }
 
 char	**ft_malloc_res(char const *s, char c)

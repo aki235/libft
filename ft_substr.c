@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+size_t	ft_min(size_t a, size_t b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
@@ -20,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	res = (char *)malloc(sizeof(char) * (len + 1));
+	res = (char *)malloc(sizeof(char) * (ft_min(len, ft_strlen(s)) + 1));
 	if (!res)
 		return (NULL);
 	s_len = ft_strlen(s);
